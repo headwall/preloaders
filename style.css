@@ -1,0 +1,150 @@
+/* ----------------------------------
+	Four colorful rotating squares
+	https://codepen.io/anon/pen/KvEdoZ
+   ---------------------------------- */
+
+.preloader {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  top: 70px;
+  left: 100px;
+  transform: rotate(45deg) scale(0.2);
+   animation: rotation infinite 2s;
+/*     scaling infinite 2s; */
+}
+
+.preloader > span {
+  position: absolute;
+  border: #666 solid 3px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.preloader > span:nth-child(1) {
+  animation: span-r infinite 2s;
+}
+
+.preloader > span:nth-child(2) {
+  animation: span-b infinite 2s;
+}
+
+.preloader > span:nth-child(3) {
+  animation: span-l infinite 2s;
+}
+
+.preloader > span:nth-child(4) {
+  animation: span-t infinite 2s;
+}
+
+@keyframes scaling {
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotation {
+  50% {
+    transform: rotate(315deg) scale(1);
+  }
+}
+
+@keyframes span-r {
+  50% {
+    left: 46px;
+    border-color: #f33;
+  }
+}
+
+@keyframes span-b {
+  50% {
+    top: 46px;
+    border-color: #09f;
+  }
+}
+
+@keyframes span-l {
+  50% {
+    left: -46px;
+    border-color: #0f0;
+  }
+}
+
+@keyframes span-t {
+  50% {
+    top: -46px;
+    border-color: #f90;
+  }
+}
+
+
+/* ----------------------------------
+	Rotating eyeball
+	https://codepen.io/anon/pen/qXvZXp
+   ---------------------------------- */
+
+body {
+  background: #f90;
+}
+
+.eye {
+  position: relative;
+  margin: 50px auto;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 100%;
+  overflow: hidden;
+  transition: all 3s linear;
+  animation: rotation 4s infinite linear;
+}
+
+.iris {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  background: #09f;
+}
+
+.pupil {
+  width: 60%;
+  height: 60%;
+  background: #000;
+  border-radius: 100%;
+}
+
+@keyframes rotation {
+  50% {
+    transform:  translateY(100px) rotate(180deg);
+}  
+   to {
+    transform: rotate(360deg); 
+  }
+}
+
+/* ----------------------------------
+	Rotating square
+	https://codepen.io/anon/pen/qXvZXp
+   ---------------------------------- */
+
+.preloader {
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  top: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  animation: rotation 0.7s infinite ease-in;
+}
+
+@keyframes rotation {
+  50% {
+  	transform: scale(0.1);
+  }
+  to {
+    transform: rotate(180deg);
+  }
